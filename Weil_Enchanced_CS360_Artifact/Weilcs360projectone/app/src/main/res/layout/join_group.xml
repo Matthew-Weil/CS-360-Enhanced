@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C2E4A">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1C2E4A"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/sms_header_text"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Join a Group"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#ADD8E6" />
+
+        <TextView
+            android:id="@+id/sms_item_qty_prompt_text"
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Joining a group will link your database with theirs\n\nIf you create a group, your current inventory will be the group invetory\n\nIf you join a group, your current inventory will be deleted, and you will join the group inventory" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="83dp"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:id="@+id/group_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/group_create_button"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:text="Create Group"
+                android:onClick="createGroup"
+                />
+
+            <Button
+                android:id="@+id/group_join_button"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:text="Join Group"
+                android:textColor="#ADD8E6"
+                android:onClick="joinGroup"
+                />
+
+        </LinearLayout>
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/group_bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#122F40"
+        android:layout_weight="1"
+        tools:ignore="BottomAppBar" />
+
+    <ImageButton
+        android:id="@+id/group_notifcation_settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+    <ImageButton
+        android:id="@+id/group_inventory_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:onClick="inventoryBtnClicked"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+    <ImageButton
+        android:id="@+id/group_logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="logOutButtonClicked"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</RelativeLayout>

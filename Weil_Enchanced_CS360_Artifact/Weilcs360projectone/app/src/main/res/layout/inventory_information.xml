@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C2E4A">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <TextView
+            android:id="@+id/inventory1_header_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="User's Inventory"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inventory1_remove_button"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="RemoveButtonClicked"
+                android:text="Delete"
+                android:textColor="#ADD8E6"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/inventory1_select_button"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="SelectButtonClicked"
+                android:text="Select"
+                android:textColor="#ADD8E6" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sms_bottom_app_bar"
+        android:layout_below="@id/header">
+            <TableLayout
+                android:id="@+id/inventory1_table"
+                android:layout_width="match_parent"
+                android:layout_height="590dp"
+                android:textColor="#ADD8E6">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/inventory1_item_header_text"
+                        android:layout_width="166dp"
+                        android:padding="15dp"
+                        android:text="Item" />
+
+                    <TextView
+                        android:id="@+id/inventory1_qty_header_text"
+                        android:layout_width="wrap_content"
+                        android:padding="15dp"
+                        android:text="Quantity" />
+
+                    <TextView
+                        android:id="@+id/inventory1_date_header_text"
+                        android:layout_width="164dp"
+                        android:padding="15dp"
+                        android:text="Date" />
+
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="addButtonClicked"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/sms_bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#122F40"
+        android:layout_weight="1"
+        tools:ignore="BottomAppBar" />
+
+    <ImageButton
+        android:id="@+id/sms_notifcation_settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="startGroupSettingsPage"
+        app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+    <ImageButton
+        android:id="@+id/sms_inventory_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
+    <ImageButton
+        android:id="@+id/sms_logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="logOutButtonClicked"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</RelativeLayout>
